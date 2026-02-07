@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register</title>
+    <link rel="stylesheet" href="stylesheet.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h2 class="title">Register</h2>
+
+      <form class="form" id="regForm">
+        <label class="label">Full Name</label>
+        <input
+          type="text"
+          class="input"
+          placeholder="Enter your full name"
+          required
+        />
+
+        <label class="label">Email</label>
+        <input
+          type="email"
+          class="input"
+          placeholder="Enter your email"
+          required
+        />
+
+        <label class="label">Password</label>
+        <input
+          type="password"
+          class="input"
+          placeholder="Create a password"
+          required
+        />
+
+        <a
+          href="login.html"
+          class="button login-btn"
+          onclick="return checkForm(event);"
+          >Register</a
+        >
+      </form>
+
+      <p class="text">
+        Already have an account?
+        <a href="login.html" class="link">Login</a>
+      </p>
+    </div>
+
+    <!-- added a little scripting hehe :> -->
+    <script>
+      function checkForm(event) {
+        const form = document.getElementById("regForm");
+        if (form.checkValidity() === false) {
+          event.preventDefault();
+          form.reportValidity();
+        }
+      }
+    </script>
+  </body>
+</html>

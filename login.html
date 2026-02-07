@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Log-in</title>
+    <link rel="stylesheet" href="stylesheet.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h2 class="title">Login</h2>
+
+      <form class="form" id="loginForm">
+        <label class="label">Email</label>
+        <input
+          type="email"
+          class="input"
+          placeholder="Enter your email"
+          required
+        />
+
+        <label class="label">Password</label>
+        <input
+          type="password"
+          class="input"
+          placeholder="Enter your password"
+          required
+        />
+
+        <a
+          href="portfolio.html"
+          class="button login-btn"
+          onclick="return checkForm(event);"
+        >
+          Login
+        </a>
+      </form>
+
+      <p class="text">
+        Don't have account?
+        <a href="register.html" class="link">Register</a>
+      </p>
+    </div>
+
+    <!-- added a little scripting hehe :) -->
+    <script>
+      function checkForm(event) {
+        const form = document.getElementById("loginForm");
+        if (!form.checkValidity()) {
+          event.preventDefault();
+          form.reportValidity();
+        }
+      }
+    </script>
+  </body>
+</html>
